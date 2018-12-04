@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>button and images</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  </head>
+<body>
+  <div class="container-fluid  ">  
+       <div class="row text-center mt-3"  >   
+         <div class="col">
+          <input type="button" value="Fish" class="btn btn-md btn-block btn-primary" id="btnfish" onclick="changeImage(fishurl,'img1')" />  
+         </div>
+         <div class="col">
+          <input type="button" value="Cow" class="btn btn-md btn-block btn-success" id="btncow" onclick="changeImage(cowurl,'img1')"  />  
+         </div>       
+         <div class="col">
+           <input type="button" value="Apple" class="btn btn-md btn-block btn-danger" id="btnapple" onclick="changeImage(appleurl,'img2')" />  
+         </div>
+         <div class="col">
+                <input type="button" value="Orange" class="btn btn-md btn-block btn-warning" id="btnorange" onclick="changeImage(orangeurl,'img2')" />  
+         </div>
+         <div class="col">
+                <input type="button" value="Car" class="btn btn-md btn-block btn-secondary" id="btncar" onclick="changeImage(carurl,'img3')" /> 
+         </div>
+         <div class="col">
+                <input type="button" value="Bike" class="btn btn-md btn-block btn-info" id="btnbike" onclick="changeImage(bikeurl,'img3')" /> 
+         </div>
+         <div class="col">
+                <input type="button" value="Dress" class="btn btn-md btn-block btn-dark" id="btnderes" onclick="changeImage(dressurl,'img4')" /> 
+         </div>
+         <div class="col">
+                <input type="button" value="Pant" class="btn btn-md btn-block btn-light" id="btnpant" onclick="changeImage(panturl,'img4')" /> 
+         </div>
+       </div>
+        <div class="row text-center mt-3";>   
+          <div class="col">
+             <img src="" class="d-none" width="200" height="200" id="img1" alt="Fish or cow"/>
+          </div>
+          <div class="col ">
+             <img src="" class="d-none" width="200" height="200" id="img2" alt="apple and orange"/>
+          </div>
+          <div class="col ">
+              <img src="" class="d-none" width="200" height="200" id="img3" alt="car and bike"/>           
+          </div>
+          <div class="col">
+                <img src="" class="d-none" width="200" height="200" id="img4" alt="Dress and pants"/>            
+          </div>
+        </div> 
+ </div> 
+  <script>
+        var fishurl="https://s7d2.scene7.com/is/image/PetSmart/ARTHMB-HowDoISetUpMyAquariumForMultipleFish-20160818?$AR1104$";
+        var cowurl="https://www.dairyherd.com/sites/default/files/Florida%20Horned%20Cow%20Grazing%20Crossbred.jpg";  
+        var appleurl="http://btcdata.blob.core.windows.net/event-image/9530/ustvarjalne-delavnice-jabolko.jpg";
+        var orangeurl="http://frank.francogoc.com/wp-content/uploads/2016/04/Orange-.png";
+        var carurl="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+        var bikeurl="https://auto.ndtvimg.com/bike-images/colors/yamaha/yzf-r15s/yamaha-yzf-r15s-track-white.jpg?v=1";
+        var dressurl="http://www.shopolica.in/wp-content/uploads/2016/07/baby-elsa-princess-dress-1.jpg";
+        var panturl="https://rukminim1.flixcart.com/image/612/612/j2w6jrk0/kids-track-pant/6/z/4/2-3-years-jacksstar-006-multi-colored-jack-s-star-original-imaeu3yq6eehh3cv.jpeg?q=70";
+         
+        function changeImage(img,pos)
+          {
+            document.getElementById(pos).src= img;
+            document.getElementById(pos).classList.remove("d-none");
+          }
+          
+   </script>
+ 
+</body>
+</html>

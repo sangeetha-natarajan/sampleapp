@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            JSON OBJECT
+        </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap-colorpicker.css" >
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    </head>
+    <body>
+        <p id="demo"></p>
+            
+    </body>
+    <script>
+        var JsonObject = [{"Id": "1","date": "Thur,15-Nov-2018","Total_Production_Tonnes": "0","Electricity_kWh": "31856.86", "Gas_m3": "8411.90","Water_m3": "100.38","Electricity_Tonnes": "0.00","Gas_Tonne": "0.00", "Water_Tonne": "0.00"}, 
+                          {"Id": "2","date": "Wed,14-Nov-2018","Total_Production_Tonnes": "102.75","Electricity_kWh": "36040.99","Gas_m3": "9067.10","Water_m3": "89.89","Electricity_Tonnes": "350.75","Gas_Tonne": "88.24","Water_Tonne": "0.87"},
+                          {"Id": "3","date": "Tues,13-Nov-2018","Total_Production_Tonnes": "129.45","Electricity_kWh": "33224.86","Gas_m3": "8535.90","Water_m3": "86.39","Electricity_Tonnes": "256.73","Gas_Tonne": "65.96","Water_Tonne": "0.67"},
+                          {"Id": "4","date": "Mon,12-Nov-2018","Total_Production_Tonnes": "59.145","Electricity_kWh": "17284.99","Gas_m3": "5179.00","Water_m3": "68.96","Electricity_Tonnes": "292.25","Gas_Tonne": "87.56","Water_Tonne": "1.17"}
+                         ];
+        var myJSON=JSON.stringify(JsonObject);
+        var myobj=JSON.parse(myJSON);
+        jsontable(myobj);
+        function jsontable(para){
+           var div = "";
+           div += '<div id="tblDiv" class="row text-center mt-3 mx-3">';
+           div +=' <table class="table table-borderless" style="background-color: #f8f8ed">';
+           div += '<thead class="border-bottom border-dark" ><tr><th>#</th><th>Date</th><th>Total Production(Tonnes)</th><th>Electricity(kWh)</th><th>Gas (m<sup>3</sup>)</th><th>Water (m<sup>3</sup>)</th><th>Electricity/Tonne</th><th>Gas/Tonne</th><th>Water/Tonne</th></tr></thead>';
+            for (var i = 0; i <para.length; i++) {
+              var obj = para[i];
+              div += '<tbody><tr><td>' + obj.Id + '</td>' +
+                '<td>' + moment(obj.date).format('ddd,D MMM YYYY') + '</td>' +
+                '<td>'+'<input type="text" value='+ obj.Total_Production_Tonnes+' class="rounded text-center"  />'+'</td>' +
+                '<td>' + obj.Electricity_kWh +  '</td>' +
+                '<td>' + obj.Gas_m3 + '</td>' +
+                '<td>' + obj.Water_m3 + '</td>' +
+                '<td>' + obj.Electricity_Tonnes +'</td>' +
+                '<td>' + obj.Gas_Tonne +  '</td>' +
+                '<td>' + obj.Water_Tonne + '</td>' +
+
+                '</tr></tbody>';
+            }
+            div += '</table></div>';
+            document.getElementById("demo").innerHTML=div;
+        }
+    </script>
+</html>
